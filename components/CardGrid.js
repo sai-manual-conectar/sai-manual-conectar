@@ -30,13 +30,13 @@ const CardGrid = (act) => {
 
   return (
     <div>
-      {selected > 0 && selected === act.correct && (
+      {act.correct && selected > 0 && selected === act.correct && (
         <div className="status-choice alert alert-success d-flex justify-content-between">
           Correcto!  Sigue así
           <button  className="btn-transparent btn p-0" onClick={() => closeStatus()} >X</button>
         </div>
       )}
-      {selected > 0 && selected !== act.correct && (
+      {act.correct && selected > 0 && selected !== act.correct && (
         <div className="status-choice alert alert-danger d-flex justify-content-between">
           Incorrecto! Vuelve a intentarlo
           <button  className="btn-transparent btn p-0" onClick={() => closeStatus()} >X</button>

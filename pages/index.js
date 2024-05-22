@@ -1,71 +1,85 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import Layout from "../components/Layout";
+import styles from "../components/CardGrid.module.sass";
 
-import { activities } from "../profile";
-import Activity from "../components/Activity";
+const Card = ({ imageSrc, onClick, activity }) => {
 
-import Progress from "../components/Progress";
-import Link from "next/link";
-import Zoom from "react-reveal/Zoom";
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = React.createRef();
 
-const Index = () => {
-  const [counter, setCounter] = useState(0);
-
-  const handleNextClick = () => {
-    setCounter(counter + 1);
+  const togglePlay = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
   };
 
-  const handlePrevClick = () => {
-    setCounter(counter - 1);
+
+  return (
+    <div className={`card ${styles.card_act}`} onClick={onClick}>
+      <audio ref={audioRef} src={`audio/activity/icons_description/${activity}.mp3`} />
+      <div className="btn" onClick={togglePlay}>
+        <img src={imageSrc} alt="Card" />
+        <p><strong className="text-center"> {activity.toUpperCase().replace("_", " ")}</strong></p>
+      </div>
+    </div>
+  );
+};
+
+const ActivitiesDescription = () => {
+  const router = useRouter();
+
+
+  const activities_list = ["marcar", "ordenar", "escuchar", "pintar", "hablar", "jugar", "repetir", "recortar", "observar", "competencia_intercultural", "relacionar"]
+
+  const handleComenzar = (event) => {
+    event.preventDefault();
+
+    // puedes redirigir al usuario a otra página
+    router.push('/actividad'); // Reemplaza  con la ruta a la que quieres redirigir
+
   };
+
   return (
     <Layout>
-      {/**Header Card */}
       <header className="row">
-        <div className="col-md-12">
-          <div className="card card-body main-banner">
+        <div className="col-md-8 offset-md-2 d-flex align-items-center">
+          <div className="card card-body d-flex align-items-center main-banner">
             <div className="row">
-              <div className="col-md-9">
-                {activities.map((act, i) => (
-                  <Activity
-                    key={i}
-                    item={i}
-                    act={act}
-                    showId={counter}
-                  ></Activity>
+              <h1 className="text-white">¡Bienvenido!</h1>
+              <h3 className="text-white">En este portal encontrarás los siguientes tipos de activdades:</h3>
+
+              <div className={`card ${styles.card_grid} ${styles.card_home}`} >
+                {activities_list.map((activity, index) => (
+
+                  <Card
+                    key={index}
+                    imageSrc={`images/icons_description/${activity}.png`}
+                    activity={activity}
+                  />
+
                 ))}
-                <Progress type="learning" />
               </div>
 
-              <Zoom right>
-                <div className=" col-md-3">
-                  <img
-                    src="images/cear_home.png"
-                    alt="CEAR IDIOMAS"
-                    className="img-fluid img-profile"
-                  />
-                  <div className="btn-group d-flex justify-content-between mt-5">
-                    <div>
-                      {/**S<h2>Valor: {counter}</h2>*/}
-                      {counter > 0 ? (
-                        <button onClick={handlePrevClick}>Anterior</button>
-                      ) : null}
-                    </div>
-                    <div>
-                      {counter < activities.length - 1 ? (
-                        <button onClick={handleNextClick}>Siguiente</button>
-                      ) : null}
-                    </div>
-                  </div>
+              <div className='row mb-5 mt-3' >
+                <div className='col-md-12 text-center'>
+                  <button className="w-50 btn btn-success" onClick={handleComenzar}>Comenzar</button>
+
+
                 </div>
-              </Zoom>
+
+              </div>
+
+
             </div>
           </div>
         </div>
       </header>
-      {/**Second section */}
     </Layout>
   );
 };
 
-export default Index;
+export default ActivitiesDescription;

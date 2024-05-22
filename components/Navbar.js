@@ -9,7 +9,7 @@ const Navbar = ({ menu = true }) => {
     <nav className="navbar navbar-dark bg-white">
       <div className="container">
       <NextLink href="https://www.cear.es" target="_blank">
-          <a className="navbar-brand ">      <img src="images/logo-cear.jpg" alt="CEAR" /></a>
+          <a className="navbar-brand ">      <img className="navbar-img" src="images/logo-cear.jpg" alt="CEAR" /></a>
         </NextLink>
         <NextLink href="/">
           <a className="navbar-brand text-black">ESPACIO CONECTA(R) <br></br>
@@ -44,82 +44,10 @@ const Navbar = ({ menu = true }) => {
                 smooth={true}
                 onClick={() => setOpen(!open)}
               >
-                Job experiences
+               Mi perfil
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="skills"
-                spy={true}
-                smooth={true}
-                onClick={() => setOpen(!open)}
-              >
-                Skills
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="education"
-                spy={true}
-                smooth={true}
-                onClick={() => setOpen(!open)}
-              >
-                Education
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="certifications"
-                spy={true}
-                smooth={true}
-                onClick={() => setOpen(!open)}
-              >
-                Certifications
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="learning"
-                spy={true}
-                smooth={true}
-                onClick={() => setOpen(!open)}
-              >
-                Learning now
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="languages"
-                spy={true}
-                smooth={true}
-                onClick={() => setOpen(!open)}
-              >
-                Languages
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="projects"
-                spy={true}
-                smooth={true}
-                onClick={() => setOpen(!open)}
-              >
-                Projects
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <NextLink href="/github">
-                <a className="nav-link">Github</a>
-              </NextLink>
-            </li>
+        
           </ul>
         </Collapse>
       </div>

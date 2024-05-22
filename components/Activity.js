@@ -2,6 +2,7 @@ import React from 'react';
 import Bounce from "react-reveal/Bounce";
 
 import CardGrid from "./CardGrid";
+import CardGridMulti from "./CardGridMulti";
 import AudioPlayer from "./AudioPlayer";
 const Activity = ({item, showId, act }) => {
   // Verifica si la keyProp es igual a 5
@@ -22,7 +23,9 @@ const Activity = ({item, showId, act }) => {
            </div>
 
            <div className="row">
-             <CardGrid {...subact} />
+            
+             {act.type==="card_grid" &&<CardGrid {...subact} />}
+             {act.type==="card_grid_multi" &&<CardGridMulti {...subact} />}
            </div>
          </div>
        ))}

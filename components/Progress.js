@@ -2,10 +2,11 @@ import { useState } from "react";
 import styles from "./Progress.module.sass";
 import classNames from "classnames";
 
-const Progress = () => {
+const Progress = ({counter}) => {
  
   // a random int to choose classname
   const classRandomInt =  1;
+  const widthBar =  100/4*counter;
   return (
     <div className="pb-2">
   
@@ -21,16 +22,18 @@ const Progress = () => {
         </div>
         <div className={styles.progress_container}>
           <div className={`progress ${styles.progress}`}>
-            <div
+          <div
               className={`progress-bar ${styles.progress_bar}`}
               role="progressbar"
-              style={{ width: `30%` }}
+              style={{ width: `${widthBar}%` }}
             >
               <div className={`${styles.color}`}></div>
             </div>
+          
           </div>
+          <div></div>
         </div>
-     
+      
   
     </div>
   );
