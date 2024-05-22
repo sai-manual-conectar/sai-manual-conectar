@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Progress.module.sass";
 import classNames from "classnames";
 

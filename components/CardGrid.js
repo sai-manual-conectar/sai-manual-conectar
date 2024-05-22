@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 import styles from "./CardGrid.module.sass";
-import classNames from "classnames";
 
 const Card = ({ imageSrc, onClick }) => {
   return (

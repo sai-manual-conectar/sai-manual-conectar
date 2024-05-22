@@ -5,7 +5,6 @@ import Layout from "../components/Layout";
 import Activity from "../components/Activity";
 import Progress from "../components/Progress";
 
-import Link from "next/link";
 import { activities } from "../profile";
 
 const Index = () => {
