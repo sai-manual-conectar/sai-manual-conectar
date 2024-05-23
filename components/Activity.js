@@ -1,5 +1,4 @@
 import React from 'react';
-import Bounce from "react-reveal/Bounce";
 
 import CardGrid from "./CardGrid";
 import CardGridMulti from "./CardGridMulti";
@@ -10,9 +9,9 @@ const Activity = ({item, showId, act }) => {
     return (
        // eslint-disable-next-line react/jsx-key
        <div className="activity">
-       <Bounce top cascade>
+       <div >
          <h3 className="text-white mb-3">Actividad {act.id}:</h3>
-       </Bounce>
+       </div>
        {act.items.map((subact,j) => (
          <div key={j}>
            <div className="d-inline-flex align-items-center">
