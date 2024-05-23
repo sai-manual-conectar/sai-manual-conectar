@@ -1,4 +1,4 @@
-# sai-manulal-conectar.github.io
+# sai-manual-conectar.github.io
 export NODE_OPTIONS=--openssl-legacy-provider
 
 npm run dev
