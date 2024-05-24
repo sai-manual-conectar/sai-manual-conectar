@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Zoom from "react-reveal/Zoom";
 import MultiDropdown from "../components/MultiDropDown";
 import Layout from "../components/Layout";
 import Activity from "../components/Activity";
@@ -36,7 +35,7 @@ const Index = () => {
 
               </div>
 
-              <Zoom right>
+         
                 <div className=" col-md-3">
                   <div className="text-center">
                   <img
@@ -66,7 +65,7 @@ const Index = () => {
 
 
                 </div>
-              </Zoom>
+           
             </div>
           </div>
         </div>

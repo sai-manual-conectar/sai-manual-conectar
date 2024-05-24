@@ -8,12 +8,11 @@ const Navbar = ({ menu = true }) => {
   return (
     <nav className="navbar navbar-dark bg-white">
       <div className="container">
-      <NextLink href="https://www.cear.es" target="_blank">
-          <a className="navbar-brand ">      <img className="navbar-img" src="images/logo-cear.jpg" alt="CEAR" /></a>
+      <NextLink href="https://www.cear.es" target="_blank" className="navbar-brand " >
+            <img className="navbar-img" src="images/logo-cear.jpg" alt="CEAR" />
         </NextLink>
-        <NextLink href="/">
-          <a className="navbar-brand text-black">ESPACIO CONECTA(R) <br></br>
-            <small>Manual de español oral</small></a>
+        <NextLink href="/" className="navbar-brand text-black">ESPACIO CONECTA(R) <br></br>
+            <small>Manual de español oral</small>
         </NextLink>
         {menu &&
           <Button
