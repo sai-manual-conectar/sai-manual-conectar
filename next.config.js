@@ -12,6 +12,7 @@ const nextConfig = {
     async redirects() {
       return [
         {
+          basePath: "/sai-manual-conectar",
           source: '/',
           destination: '/login', 
           permanent: true,
