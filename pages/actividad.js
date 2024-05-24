@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MultiDropdown from "../components/MultiDropDown";
+import MultiDropdown from "../components/MultiDropdown";
 import Layout from "../components/Layout";
 import Activity from "../components/Activity";
 import Progress from "../components/Progress";
