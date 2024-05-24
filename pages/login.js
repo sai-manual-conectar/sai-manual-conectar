@@ -36,7 +36,7 @@ const LoginForm = () => {
   return (
     <Layout>
 
-      <div className="container mt-5 w-50">
+      <div className="container login-container">
         <div className="card signup-card">
           <div className="card-header">
             <h3>Iniciar Sesión</h3>

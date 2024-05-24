@@ -32,15 +32,21 @@ html {
 .overflow .card-img-top:hover {
   transform: scale(1.5);
 }
+#burger-menu {
+  background: lightgreen !important;
+  color: #000000 !important;
+}
 
 @media (max-width: 430px) {
   .navbar-brand {
-    max-width: 200px;
     white-space: pre-line;
   }
 }
 .navbar-img {
-  width: 60%;
+  max-width: 120px;
+  @media (max-width: 600px) {
+    max-width: 100px;
+  }
 }
 
 .nav-item {
